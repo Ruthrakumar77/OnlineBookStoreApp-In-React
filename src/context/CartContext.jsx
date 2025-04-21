@@ -1,6 +1,6 @@
 
 import { createContext, useContext, useState, useEffect } from 'react';
-import { getCart, addToCart, removeFromCart, clearCart } from '../services/cartService';
+import { getCart, addToCart, removeFromCart, clearCart } from '../services/cartservice';
 
 const CartContext = createContext();
 
@@ -52,15 +52,15 @@ export const CartProvider = ({ children }) => {
   const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ 
-      cart, 
-      addItem, 
-      removeItem, 
-      emptyCart, 
-      cartTotal, 
-      itemCount, 
-      cartOpen, 
-      setCartOpen 
+    <CartContext.Provider value={{
+      cart,
+      addItem,
+      removeItem,
+      emptyCart,
+      cartTotal,
+      itemCount,
+      cartOpen,
+      setCartOpen
     }}>
       {children}
     </CartContext.Provider>
